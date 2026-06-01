@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --green-50:  #f0fdf4;
+  --green-100: #dcfce7;
+  --green-400: #4ade80;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+  --lime:   #a3e635;
+  --amber:  #fbbf24;
+  --coral:  #fb7185;
+  --bg:       #f6faf7;
+  --surface:  #ffffff;
+  --surface2: #f0fdf4;
+  --border:   #d1fae5;
+  --text:     #1a2e1c;
+  --text-2:   #4b6b50;
+  --text-3:   #86a98c;
+  --shadow-sm: 0 1px 3px rgba(22,163,74,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(22,163,74,0.12), 0 2px 6px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 32px rgba(22,163,74,0.18), 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-glow: 0 0 0 3px rgba(74,222,128,0.25);
+  --r-sm:  10px;
+  --r-md:  16px;
+  --r-lg:  24px;
+  --r-xl:  32px;
+  --r-full: 9999px;
+  --font-body:    'Outfit', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); min-height: 100vh; overflow-x: hidden; }
+h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; color: var(--text); line-height: 1.15; }
+p { color: var(--text-2); }
+button { font-family: var(--font-body); cursor: pointer; }
+input { font-family: var(--font-body); }
+img { display: block; max-width: 100%; }
+
+.cf-btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  background: linear-gradient(135deg, var(--green-500), var(--green-600));
+  color: #fff; border: none; padding: 13px 24px; border-radius: var(--r-full);
+  font-size: 15px; font-weight: 600; letter-spacing: 0.2px;
+  box-shadow: 0 4px 14px rgba(22,163,74,0.35);
+  transition: transform 0.15s, box-shadow 0.15s; width: 100%;
+}
+.cf-btn-primary:active { transform: scale(0.97); box-shadow: 0 2px 8px rgba(22,163,74,0.25); }
+
+.cf-btn-secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  background: var(--green-100); color: var(--green-700);
+  border: 1.5px solid var(--border); padding: 12px 22px; border-radius: var(--r-full);
+  font-size: 15px; font-weight: 600; transition: background 0.15s, transform 0.15s;
+}
+.cf-btn-secondary:active { transform: scale(0.97); }
+
+.cf-card {
+  background: var(--surface); border-radius: var(--r-lg); padding: 18px;
+  box-shadow: var(--shadow-md); border: 1px solid rgba(209,250,229,0.6);
+}
+
+.cf-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--green-100); color: var(--green-700);
+  padding: 4px 10px; border-radius: var(--r-full); font-size: 12px; font-weight: 600;
+}
+
+.cf-section-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 14px; }
+
+.cf-input {
+  width: 100%; padding: 13px 16px 13px 44px; border-radius: var(--r-full);
+  border: 1.5px solid var(--border); background: var(--surface);
+  font-size: 15px; color: var(--text); outline: none; box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.cf-input:focus { border-color: var(--green-400); box-shadow: var(--shadow-glow); }
+.cf-input::placeholder { color: var(--text-3); }
+
+html { scroll-behavior: smooth; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--green-400); border-radius: 4px; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
+  70%  { box-shadow: 0 0 0 14px rgba(74,222,128,0); }
+  100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.animate-fadeUp { animation: fadeUp 0.4s ease both; }
